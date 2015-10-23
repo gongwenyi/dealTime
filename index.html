@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=Edge, chrome=1.0">
+  <title>倒计时效果</title>
+</head>
+<body>
+  
+  <p class="deal-time" data-time="12:23:33">12:23:33</p>
+  <p class="deal-time" data-time="02:47:12">02:47:12</p>
+
+  <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+  <script src="dealTime.js"></script>
+  <script>
+    $(function(){
+      //倒计时
+      dealTime.init($('.deal-time'));
+    });
+  </script>
+</body>
+</html>
