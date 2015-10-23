@@ -15,11 +15,24 @@
       return time;
     },
     transformToSecond : function(str){  //计算总共的秒数
-      var arr = str.split(":"), //用:切割时间字符串
-          hour = parseInt(arr[0]),  //时
-          minute = parseInt(arr[1]), //分
-          second = parseInt(arr[2]), //秒
-          totalSecond = hour*60*60 + minute*60 + second;
+      var arr = str.split(":"); //用:切割时间字符串
+      var hour = minute = second = totalSecond = 0;
+      if(arr.length ==1){
+        hour = 0;
+        minute = 0;
+        second = parseInt(arr[0]);
+      }else if(arr.length == 2){
+        hour = 0;
+        minute = parseInt(arr[0]);
+        second = parseInt(arr[1]);
+      }else if(arr.length == 3){
+        hour = parseInt(arr[0]),  //时
+        minute = parseInt(arr[1]), //分
+        second = parseInt(arr[2]); //秒
+      }else{
+        hour = 24;
+      }
+      totalSecond = hour*60*60 + minute*60 + second;
       return totalSecond;
     },
     transformToTimeString : function(totalSecond){  //将秒数转换为hh:mm:ss
